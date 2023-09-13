@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Deck</title>
+  </head>
+  <body>
+	  <h1>Deck</h1>
+    <p>Send messages to clients.</p>
+
+    <hr>
+
+    <form id="form">
+      <input type="text" id="message" placeholder="Message">
+      <button type="submit">Send</button>
+    </form>
+
+    <hr>
+
+    <h2>Message Log</h2>
+    <ul id="sent"></ul>
+    
+    <script>
+      function logMessage(msg) {
+        const li = document.createElement('li');
+
+        li.innerText = msg;
+        sent.appendChild(li);
+      }
+
+      const form = document.getElementById('form');
+      const sent = document.getElementById('sent');
+      const socket = new WebSocket('ws://localhost:8001');
+
+      form.onsubmit = (event) => {
+        event.preventDefault();
+
+        const messageEl = document.getElementById('message');
+        const message = messageEl.value;
+
+        socket.send(message);
+        logMessage(`SENT: ${message}`);
+
+        messageEl.value = '';
+      };
+    </script>
+  </body>
+</html>
