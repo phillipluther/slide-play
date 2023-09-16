@@ -1,21 +1,15 @@
 {
   "name": "slide-play",
-  "version": "1.0.0",
-  "description": "",
   "type": "module",
-  "main": "index.js",
+  "version": "0.0.1",
   "scripts": {
-    "start:deck": "pnpm dlx http-server ./ui/deck -p 8081",
-    "start:client": "pnpm dlx http-server ./ui/client -p 8080",
-    "start:server": "node ./server/index.js",
-    "start": "concurrently \"pnpm run start:client\" \"pnpm run start:server\" \"pnpm run start:deck\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
-  "keywords": [],
-  "author": "Phillip Luther <dev@phillipluther.com>",
-  "license": "MIT",
   "dependencies": {
-    "concurrently": "^8.2.1",
-    "ws": "^8.14.1"
+    "astro": "^3.1.0"
   }
 }
