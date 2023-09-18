@@ -2,14 +2,18 @@
   "name": "socket-server",
   "version": "0.0.0",
   "description": "",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\""
   },
   "keywords": [],
   "author": "Phillip Luther <dev@phillipluther.com>",
   "license": "UNLICENSED",
   "dependencies": {
+    "nodemon": "^3.0.1",
     "ws": "^8.14.1"
   }
 }

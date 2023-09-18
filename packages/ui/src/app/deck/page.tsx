@@ -1,7 +1,8 @@
 export default function DeckPage() {
   return (
-    <div>
-      <h1>Deck Page</h1>
-    </div>
+    <main>
+      <h1 className="text-2xl">What the Presenter Sees</h1>
+      <p> ... slides go here ...</p>
+    </main>
   );
 }
