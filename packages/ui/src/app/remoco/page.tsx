@@ -1,4 +1,6 @@
 import cx from 'classnames';
+import PageTitle from '../../components/page-title';
+import Wrapper from '../../components/wrapper';
 
 const Button = ({ children, className, ...props }: { children: React.ReactNode, className?: string }) => (
   <button
@@ -14,14 +16,14 @@ const Button = ({ children, className, ...props }: { children: React.ReactNode, 
 
 export default function RemocoPage() {
   return (
-    <main className="max-w-lg p-8 mx-auto">
-      <h1 className="text-2xl">Simple Remote Control</h1>
+    <Wrapper as="main">
+      <PageTitle>Simple Remote Control</PageTitle>
       <p>Try it on your phone!</p>
       
       <div className="flex w-100 mt-8">
         <Button className="mr-2">&laquo; Previous Slide</Button>
         <Button className="ml-2">Next Slide &raquo;</Button>
       </div>
-    </main>
+    </Wrapper>
   );
 }

@@ -1,5 +1,6 @@
 import './globals.css';
 import type { Metadata } from 'next';
+import Wrapper from '../components/wrapper';
 
 export const metadata: Metadata = {
   title: 'Slide Play',
@@ -13,7 +14,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Wrapper>    
+          {children}
+        </Wrapper>
+      </body>
     </html>
   )
 }

@@ -1,7 +1,9 @@
+import PageTitle from '../../components/page-title';
+
 export default function ViewPage() {
   return (
     <main>
-      <h1 className="text-2xl">What a Viewer Sees</h1>
+      <PageTitle>What a Viewer Sees</PageTitle>
       <p> ... slides go here ...</p>
     </main>
   );

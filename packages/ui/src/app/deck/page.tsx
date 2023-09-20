@@ -1,7 +1,9 @@
+import PageTitle from '../../components/page-title';
+
 export default function DeckPage() {
   return (
     <main>
-      <h1 className="text-2xl">What the Presenter Sees</h1>
+      <PageTitle>What the Presenter Sees</PageTitle>
       <p> ... slides go here ...</p>
     </main>
   );

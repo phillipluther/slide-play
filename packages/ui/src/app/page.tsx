@@ -1,9 +1,10 @@
 import Link from 'next/link';
+import PageTitle from '../components/page-title';
 
 export default function Page() {
   return (
     <main>
-      <h1 className="text-2xl">Fun With Slides!</h1>
+      <PageTitle>Fun With Slides!</PageTitle>
       <nav>
 
       <ul>
