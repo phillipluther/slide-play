@@ -1,10 +1,11 @@
 import PageTitle from '../../components/page-title';
+import FakeDeck from '../../components/fake-deck';
 
 export default function DeckPage() {
   return (
     <main>
       <PageTitle>What the Presenter Sees</PageTitle>
-      <p> ... slides go here ...</p>
+      <FakeDeck showControls />
     </main>
   );
 }
