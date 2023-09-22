@@ -10,7 +10,6 @@ export default function RemocoPage() {
 
     await fetch(slideUrl, {
       method: 'GET',
-      mode: 'cors',
       cache: 'no-cache',
     });
   }
