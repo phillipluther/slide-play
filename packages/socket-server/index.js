@@ -20,6 +20,4 @@ wss.on('connection', function connection(ws) {
   ws.on('close', function close() {
     ws.send('Bye, client.');
   });
-
-  ws.send('Hi, client.');
 });
