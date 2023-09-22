@@ -1,11 +1,22 @@
 'use client';
 
-import { useState } from 'react';
-import PageTitle from '../../components/page-title';
-import FakeDeck from '../../components/fake-deck';
+import { useEffect, useState } from 'react';
+import PageTitle from '@/components/page-title';
+import FakeDeck from '@/components/fake-deck';
+import { SOCKET_SERVER } from '@/consts';
 
 export default function DeckPage() {
-  const [currentSlide, updateSlideNum] = useState(0);
+  const [currentSlide, updateCurrentSlide] = useState(0);
+  let socket: WebSocket;
+
+  function updateSlideNum(slideNum: number) {
+    updateCurrentSlide(slideNum);
+    socket.send(slideNum.toString());
+  }
+
+  useEffect(() => {
+    socket = new WebSocket(SOCKET_SERVER);
+  });
 
   return (
     <>

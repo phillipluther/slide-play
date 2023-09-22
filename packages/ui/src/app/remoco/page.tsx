@@ -7,7 +7,7 @@ import { NEXT_SLIDE_URL, PREVIOUS_SLIDE_URL } from '../../consts';
 export default function RemocoPage() {
   async function nextSlide(previous = false) {
     const slideUrl = previous ? PREVIOUS_SLIDE_URL : NEXT_SLIDE_URL;
-
+    
     await fetch(slideUrl, {
       method: 'GET',
       cache: 'no-cache',

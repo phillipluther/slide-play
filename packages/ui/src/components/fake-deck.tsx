@@ -20,9 +20,11 @@ const slideColors = [
 
 export default function FakeDeck({
   showControls = false,
+  jumpTo,
   onChange,
 }: {
   showControls?: boolean,
+  jumpTo?: number,
   onChange?: Function,
 }) {
   const [slideNum, goToSlide] = useState(0);
@@ -32,6 +34,10 @@ export default function FakeDeck({
     if (onChange) {
       onChange(nextSlide);
     }
+  }
+
+  if (jumpTo && (jumpTo !== slideNum)) {
+    goToSlide(jumpTo);
   }
 
   return (
