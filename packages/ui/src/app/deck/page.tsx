@@ -34,7 +34,7 @@ export default function DeckPage() {
           <FakeDeck slide={currentSlide} />
           <Controls 
             disablePrevious={(currentSlide === 0) || !isConnected}
-            disableNext={(currentSlide === deckSize) || !isConnected}
+            disableNext={(currentSlide === deckSize - 1) || !isConnected}
             onPrevious={() => updateSlideNum(currentSlide - 1)}
             onNext={() => updateSlideNum(currentSlide + 1)}
           />

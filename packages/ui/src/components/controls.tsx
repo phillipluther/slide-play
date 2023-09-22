@@ -14,7 +14,7 @@ export default function Controls({
   return (
     <div>
       <Button 
-        onClick={(e: Event) => !disableNext && onPrevious(e)}
+        onClick={(e: Event) => !disablePrevious && onPrevious(e)}
         disabled={disablePrevious}
         className="mr-4 mt-4"
       >
