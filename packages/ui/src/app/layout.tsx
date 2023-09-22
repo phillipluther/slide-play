@@ -1,6 +1,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import Wrapper from '../components/wrapper';
+import SocketProvider from '@/components/socket-provider';
+import Wrapper from '@/components/wrapper';
 
 export const metadata: Metadata = {
   title: 'Slide Play',
@@ -15,10 +16,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Wrapper as="main">    
-          {children}
-        </Wrapper>
+        <SocketProvider>
+          <Wrapper as="main">    
+            {children}
+          </Wrapper>
+        </SocketProvider>
       </body>
     </html>
-  )
+  );
 }

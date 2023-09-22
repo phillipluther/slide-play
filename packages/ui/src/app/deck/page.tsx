@@ -1,16 +1,20 @@
 'use client';
 
-import { useRef, useEffect, useState } from 'react';
+import { useEffect, useCallback, useState } from 'react';
 import PageTitle from '@/components/page-title';
 import FakeDeck, { deckSize } from '@/components/fake-deck';
 import Controls from '@/components/controls';
-import { SOCKET_SERVER } from '@/consts';
+import { useSocket } from '@/components/socket-provider';
 
 export default function DeckPage() {
   const [currentSlide, updateCurrentSlide] = useState(0);
   const [isConnected, connect] = useState(false);
+  
+  const socket = useSocket();
 
-  let socket: WebSocket;
+  const onOpen = useCallback(() => {
+    connect(true);
+  }, []);
 
   function updateSlideNum(slideNum: number) {
     updateCurrentSlide(slideNum);
@@ -18,11 +22,7 @@ export default function DeckPage() {
   }
 
   useEffect(() => {
-    socket = new WebSocket(SOCKET_SERVER);
-
-    socket.onopen = () => {
-      connect(true);
-    };
+    socket.addEventListener('open', onOpen);
   });
 
   return (

@@ -2,7 +2,6 @@
 
 import PageTitle from '@/components/page-title';
 import Controls from '@/components/controls';
-import { SOCKET_SERVER } from '@/consts';
 
 export default function RemocoPage() {
   return (
