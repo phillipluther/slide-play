@@ -2,7 +2,7 @@
 
 import { useContext, createContext } from 'react';
 
-export const SOCKET_SERVER = 'ws://localhost:8001';
+export const SOCKET_SERVER = process.env.SOCKET_SERVER || 'ws://localhost:8001';
 
 const ws = new WebSocket(SOCKET_SERVER);
 
