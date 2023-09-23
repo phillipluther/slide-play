@@ -22,7 +22,7 @@ export default function ViewPage() {
   useEffect(() => {
     socket.addEventListener('open', onOpen);
     socket.addEventListener('message', onMessage);
-  }, [socket]);
+  }, [socket, onOpen, onMessage]);
 
   return (
     <>
